@@ -2,6 +2,11 @@
   "name": "monorepo",
   "packageManager": "yarn@3.3.0",
   "private": true,
+  "scripts": {
+    "dev": "yarn workspaces dev",
+    "start": "yarn workspaces start",
+    "build": "yarn workspaces build"
+  },
   "workspaces": [
     "packages/*"
   ]
