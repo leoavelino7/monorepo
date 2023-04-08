@@ -12,3 +12,4 @@
 
 /packages/*
 !/packages/app-libs
+!/packages/app-ui
