@@ -16,6 +16,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."\
       },\
       {\
+        "name": "app-api",\
+        "reference": "workspace:packages/app-api"\
+      },\
+      {\
         "name": "app-libs",\
         "reference": "workspace:packages/app-libs"\
       },\
@@ -27,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["app-api", ["workspace:packages/app-api"]],\
       ["app-libs", ["workspace:packages/app-libs"]],\
       ["app-ui", ["workspace:packages/app-ui"]],\
       ["monorepo", ["workspace:."]]\
@@ -886,13 +891,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["app-api", [\
+        ["workspace:packages/app-api", {\
+          "packageLocation": "./packages/app-api/",\
+          "packageDependencies": [\
+            ["app-api", "workspace:packages/app-api"],\
+            ["nodemon", "npm:2.0.22"],\
+            ["ts-node", "virtual:76d55ae5399470fd280c56e0a6166dccbe157c8691edbd5a0d2ac8b90c502f7da4d660c878ffca584a98ef589467ae9f346d0679d75f08b792f5eed8f9c7bf85#npm:10.9.1"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=d73830"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["app-libs", [\
         ["workspace:packages/app-libs", {\
           "packageLocation": "./packages/app-libs/",\
           "packageDependencies": [\
             ["app-libs", "workspace:packages/app-libs"],\
             ["nodemon", "npm:2.0.22"],\
-            ["ts-node", "virtual:59ab62bfd9f5082a363661e146e3c103026d2be3852775ae84f39c79a526537c6aacf7b0637a46e6bd968771d0473c73576f77c81efa58bd4a6cc6d600784ce3#npm:10.9.1"],\
+            ["ts-node", "virtual:76d55ae5399470fd280c56e0a6166dccbe157c8691edbd5a0d2ac8b90c502f7da4d660c878ffca584a98ef589467ae9f346d0679d75f08b792f5eed8f9c7bf85#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=d73830"]\
           ],\
           "linkType": "SOFT"\
@@ -2475,10 +2492,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:59ab62bfd9f5082a363661e146e3c103026d2be3852775ae84f39c79a526537c6aacf7b0637a46e6bd968771d0473c73576f77c81efa58bd4a6cc6d600784ce3#npm:10.9.1", {\
-          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-3aabede33e/0/cache/ts-node-npm-10.9.1-6c268be7f4-090adff130.zip/node_modules/ts-node/",\
+        ["virtual:76d55ae5399470fd280c56e0a6166dccbe157c8691edbd5a0d2ac8b90c502f7da4d660c878ffca584a98ef589467ae9f346d0679d75f08b792f5eed8f9c7bf85#npm:10.9.1", {\
+          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-a6f2e82b02/0/cache/ts-node-npm-10.9.1-6c268be7f4-090adff130.zip/node_modules/ts-node/",\
           "packageDependencies": [\
-            ["ts-node", "virtual:59ab62bfd9f5082a363661e146e3c103026d2be3852775ae84f39c79a526537c6aacf7b0637a46e6bd968771d0473c73576f77c81efa58bd4a6cc6d600784ce3#npm:10.9.1"],\
+            ["ts-node", "virtual:76d55ae5399470fd280c56e0a6166dccbe157c8691edbd5a0d2ac8b90c502f7da4d660c878ffca584a98ef589467ae9f346d0679d75f08b792f5eed8f9c7bf85#npm:10.9.1"],\
             ["@cspotcode/source-map-support", "npm:0.8.1"],\
             ["@swc/core", null],\
             ["@swc/wasm", null],\
